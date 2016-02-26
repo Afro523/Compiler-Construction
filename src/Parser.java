@@ -39,10 +39,6 @@ public class Parser{
     	new Error("Syntax Error: " + currentToken.spelling + " is not accepted", currentToken.line);
     }
 
-  private void acceptIt() {
-	  currentToken = lexer.nextToken();
-  }
-
   public void parse() {
     lexer = new Lexer();
 	currentToken = lexer.nextToken();
@@ -154,7 +150,7 @@ public class Parser{
   //	Becomes Production Rule Below
   //Statement = Block | AssignmentOrFunctionCall | IfStatement | WhileStatement | ReadStatement | WriteStatement.   
   private void parseStatement(){
-	  if(currentToken.kind == Token.LBRACKET)
+	  if(currentToken.kind == Token.LBRACE)
 		  parseBlock();
 	  else if(currentToken.kind == Token.IDENTIFIER)
 		  parseAssignmentOrFunctionCall();		  
@@ -176,9 +172,10 @@ public class Parser{
 	  parseExpression();
 	  accept(Token.RPAREN);
 	  parseStatement();
-	  if(currentToken.kind == Token.ELSE)
+	  if(currentToken.kind == Token.ELSE){
 		  accept(Token.ELSE);
 		  parseStatement();
+	  }
   }
 
   //WhileStatement = "while" "(" Expression")" Statement
@@ -241,7 +238,7 @@ public class Parser{
   //VariableAccess = Identifier ["[" Expression "]"].
   public void parseVariableAccess(){
 	  accept(Token.IDENTIFIER);
-	  if(currentToken.kind == Token.RBRACE){
+	  if(currentToken.kind == Token.LBRACKET){
 		  accept(Token.LBRACKET);
 		  parseExpression();
 		  accept(Token.RBRACKET);

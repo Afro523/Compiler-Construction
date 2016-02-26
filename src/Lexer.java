@@ -157,39 +157,6 @@ public class Lexer{
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-    	  /* Josh
-    	   //ATTEMPT 1
-    	  takeIt(); 
-      	if (currentChar == 'a' || currentChar == 'b' || currentChar == 'c' || currentChar == 'd' || currentChar == 'e' || 
-      		currentChar == 'f' || currentChar == 'g' || currentChar == 'h' || currentChar == 'i' || currentChar == 'j' || 
-      		currentChar == 'k' || currentChar == 'l' || currentChar == 'm' || currentChar == 'n' || currentChar == 'o' || 
-      		currentChar == 'p' || currentChar == 'q' || currentChar == 'r' || currentChar == 's' || currentChar == 't' || 
-      		currentChar == 'u' || currentChar == 'v' || currentChar == 'w' || currentChar == 'x' || currentChar == 'y' || currentChar == 'z' ||
-      		currentChar == 'A' || currentChar == 'B' || currentChar == 'C' || currentChar == 'D' || currentChar == 'E' || 
-          	currentChar == 'F' || currentChar == 'G' || currentChar == 'H' || currentChar == 'I' || currentChar == 'J' || 
-          	currentChar == 'K' || currentChar == 'L' || currentChar == 'M' || currentChar == 'N' || currentChar == 'O' || 
-          	currentChar == 'P' || currentChar == 'Q' || currentChar == 'R' || currentChar == 'S' || currentChar == 'T' || 
-          	currentChar == 'U' || currentChar == 'V' || currentChar == 'W' || currentChar == 'X' || currentChar == 'Y' || currentChar == 'Z'){
-      			takeIt();
-      			if (currentChar == '\''){
-      				takeIt();
-      				return Token.CHAR;
-      			} 
-      	}else return Token.APOS;
-      	return Token.APOS;
-
-		//ATTEMPT 2
-      		takeIt();
-			if (currentSpelling.toString().equals("'")){
-				takeIt();
-				if(currentChar == '\''){
-					takeIt();
-					return Token.APOS;
-				}
-				return Token.CHAR;
-			} 
-				return Token.APOS;
-				*/
       case '\u0000': takeIt(); return Token.EOF;    	  
       default:
       		new Error("Error: The symbol " + currentChar + " is not a token", line);

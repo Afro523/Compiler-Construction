@@ -1,0 +1,22 @@
+int a, b;
+char c;
+
+void blargh(int x, char y, int z)
+{
+  int a[20];
+  a[3] = x + z;
+}
+
+int main(){
+	int w, x, y; int m[20];
+	if(x < 5) x = 3;
+	if(x < 5) 
+	  x = 4; 
+	else 
+	{
+	  read(a, b); 
+	  write(a, b);
+	}
+	while(x != y || x >= y && x != y) read(m[20], m[40+y]);
+	g(12, c, 23);
+}
